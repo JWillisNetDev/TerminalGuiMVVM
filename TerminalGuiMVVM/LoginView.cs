@@ -36,10 +36,6 @@ public class LoginView : Window
 					break;
 
 				case nameof(LoginViewModel.Password):
-					if ((string)passwordInput.Text == ViewModel.Password)
-					{
-						return;
-					}
 					passwordInput.Text = ViewModel.Password;
 					break;
 
