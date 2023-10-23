@@ -28,7 +28,8 @@ public static class ViewExtensions
 
 	public static void BindText2<T>(this TextField textField, T source, Expression<Func<T, string>> selector)
 	{
-		if (selector.Body is not MemberExpression { Member: PropertyInfo { CanWrite: true, DeclaringType: not null } property })
+		if (selector.Body is not MemberExpression { Member: PropertyInfo { CanWrite: true, DeclaringType: not null } property }
+		    || property.PropertyType != typeof(string))
 		{
 			throw new InvalidOperationException();
 		}
@@ -37,17 +38,17 @@ public static class ViewExtensions
 
 		// VM.Value = args.NewText
 		var instance = Expression.Parameter(property.DeclaringType);
-		var argument = Expression.Parameter(typeof(ustring));
+		var argument = Expression.Parameter(typeof(string));
 
-		Action<T, ustring> set = Expression.Lambda<Action<T, ustring>>(
-			Expression.Call(instance, property.GetSetMethod()!,
-				Expression.Convert(argument, typeof(string))), false, instance, argument).Compile();
+		Action<T, string> set = Expression.Lambda<Action<T, string>>(
+			Expression.Call(instance, property.GetSetMethod()!, argument), false, instance, argument).Compile();
 
 		textField.TextChanging += args =>
 		{
-			if (get(source) != (string)args.NewText)
+			string newText = (string)args.NewText;
+			if (get(source) != newText)
 			{
-				set(source, args.NewText);
+				set(source, newText);
 			}
 		};
 	}
