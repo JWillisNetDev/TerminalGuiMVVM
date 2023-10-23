@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerminalGuiMVVM", "TerminalGuiMVVM\TerminalGuiMVVM.csproj", "{4BF19B49-B19B-4D4A-8B5A-DDE43890E94E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BF19B49-B19B-4D4A-8B5A-DDE43890E94E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF19B49-B19B-4D4A-8B5A-DDE43890E94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF19B49-B19B-4D4A-8B5A-DDE43890E94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF19B49-B19B-4D4A-8B5A-DDE43890E94E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67958A79-6F17-4398-A57A-98076822906D}
+	EndGlobalSection
+EndGlobal
